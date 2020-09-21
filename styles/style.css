@@ -28,7 +28,7 @@ a {
    márgenes, debes dar a la imagen un comportamiento de block-level usando display: block;.
    y asignarle un margen automático para que se centre. */
 img {
-  display: block;  /* display: selecciona el modo de visualización para el elemento */
+  display: block; /* display: selecciona el modo de visualización para el elemento */
   margin: auto;
 }
 
