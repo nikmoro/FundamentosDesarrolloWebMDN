@@ -3,6 +3,7 @@ miTitulo.textContent = "¡Hola mundo! desde Mozilla Developer Network";
 
 let myImage = document.querySelector("img");
 myImage.onclick = function () {
+  // una función sin nombre (una función «anónima»)
   let miSrc = myImage.getAttribute("src");
   if (miSrc === "images/cmd.jpg") {
     myImage.setAttribute("src", "images/tomato.png");
@@ -11,7 +12,7 @@ myImage.onclick = function () {
   }
 };
 
-let mensaje = "Hola, me llamo Osiel.";
+let mensaje = "Hola, me llamo Osiel."
 alert(mensaje);
 
 let arreglo = [1, "Osiel", 2, "Nicolás", 3, "Morales", 4, "Rosales"];
@@ -33,8 +34,31 @@ function restar(n1, n2) {
 
 restar(5, 3);
 
-/*
 // Eventos
-let myEvent = document.querySelector('html')  // querySelector() para obtener una referencia al título y almacenarla en una variable llamada miTitulo.
-myEvent.onclick = function() { alert('¡Ouch! ¡Deja de pincharme!') }
-// Equivalente: document.querySelector('html').onclick = function() { alert('¡Ouch! ¡Deja de pincharme!') } */
+let myEvent = document.querySelector("p"); // querySelector() para obtener una referencia al título y almacenarla en una variable llamada miTitulo.
+myEvent.onclick = function () {
+  alert("¡Ouch! ¡Deja de pincharme!");
+};
+// Equivalente: document.querySelector('p').onclick = function() { alert('¡Ouch! ¡Deja de pincharme!') }
+
+let myBtn = document.querySelector("button");
+let myTitle = document.querySelector("h1");
+
+//  Función para poner el saludo personalizado
+function setUserName() {
+  let myName = prompt("Por favor, ingresa tu nombre."); // prompt(), que crea un cuadro de diálogo como lo hace alert(), pero esta pide un dato (Como el scanf en C o input en Python)
+  localStorage.setItem("nombre", myName);
+  myTitle.textContent = "Mozilla es genial, " + myName;
+}
+
+// para comprobar si el elemento 'nombre' existe
+if (!localStorage.getItem("nombre")) {
+  setUserName();
+} else {
+  let storageName = localStorage.getItem("nombre");
+  myTitle.textContent = "Mozilla es genial, " + storageName;
+}
+
+myBtn.onclick = function () {
+  setUserName();
+};
