@@ -12,7 +12,7 @@ myImage.onclick = function () {
   }
 };
 
-let mensaje = "Hola, me llamo Osiel."
+let mensaje = "Hola, me llamo Osiel.";
 alert(mensaje);
 
 let arreglo = [1, "Osiel", 2, "Nicolás", 3, "Morales", 4, "Rosales"];
@@ -47,8 +47,12 @@ let myTitle = document.querySelector("h1");
 //  Función para poner el saludo personalizado
 function setUserName() {
   let myName = prompt("Por favor, ingresa tu nombre."); // prompt(), que crea un cuadro de diálogo como lo hace alert(), pero esta pide un dato (Como el scanf en C o input en Python)
-  localStorage.setItem("nombre", myName);
-  myTitle.textContent = "Mozilla es genial, " + myName;
+  if (!myName) {
+    setUserName;
+  } else {
+    localStorage.setItem("nombre", myName);
+    myTitle.textContent = "Mozilla es genial, " + myName;
+  }
 }
 
 // para comprobar si el elemento 'nombre' existe
